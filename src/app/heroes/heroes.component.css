@@ -1,0 +1,4 @@
+/* HeroesComponent's private CSS styles */
+span.clickable {
+  cursor: pointer;
+}

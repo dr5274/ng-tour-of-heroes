@@ -1,0 +1,29 @@
+<div *ngIf="hero">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>
+        <button class="btn btn-sm" title="Go Back" (click)="goBack()">
+          <span class="fa fa-mail-reply"></span>
+        </button>
+        {{ hero.name | uppercase }} Details
+      </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="input-group">
+        <span class="input-group-addon">{{hero.id}}</span>
+        <input class="form-control" #heroName="ngModel" [(ngModel)]="hero.name" placeholder="name" required/>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" [disabled]="heroName.invalid" (click)="save()" title="Update {{hero.name}}">
+            <span class="fa fa-floppy-o"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">&nbsp;</div>
+</div>

@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3>My Heroes</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="input-group">
+      <span class="input-group-addon">New Hero</span>
+      <input class="form-control" #newHero="ngModel" [(ngModel)]="newHero.name" placeholder="name" required/>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" [disabled]="newHero.invalid" title="Save {{newHero.name}}">
+          <span class="fa fa-floppy-o"></span>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="row">&nbsp;</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <table class="table table-condensed table-hover">
+      <colgroup>
+        <col width="30px">
+        <col width="60px">
+        <col>
+        <col width="30px">
+      </colgroup>
+      <thead>
+        <tr>
+          <th></th>
+          <th>ID</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hero of heroes">
+          <td>
+            <span class="clickable fa fa-eye" routerLink="/detail/{{hero.id}}" title="View {{hero.name}}"></span>
+          </td>
+          <td>
+            <span class="badge">{{hero.id}}</span>
+          </td>
+          <td>{{hero.name}}</td>
+          <td>
+            <span class="clickable fa fa-trash" (click)="delete(hero)" title="Delete {{hero.name}}"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">&nbsp;</div>

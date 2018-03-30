@@ -1,0 +1,24 @@
+<div class="row">&nbsp;</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="input-group">
+      <span class="input-group-addon">Hero Search
+        <span class="fa fa-search"></span>
+      </span>
+      <input class="form-control" #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <ul class="list-group">
+      <li *ngFor="let hero of heroes$ | async" class="list-group-item">
+        <a routerLink="/detail/{{hero.id}}">
+          <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

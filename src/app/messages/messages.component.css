@@ -1,0 +1,6 @@
+/* MessagesComponent's private CSS styles */
+
+.panel-heading button.close {
+  margin-top: -20px;
+  font-size: 15px;
+}
